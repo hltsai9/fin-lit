@@ -64,11 +64,30 @@ html, body {
 }
 .progress-text { font-size: 12px; color: var(--muted); margin-top: 4px; text-align: right; }
 
+.topics-nav {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  padding: 14px 28px; border-bottom: 1px solid var(--border);
+  background: rgba(14, 21, 37, 0.5);
+}
+.topic-pill {
+  background: var(--panel); color: var(--muted);
+  border: 1px solid var(--border); border-radius: 999px;
+  padding: 8px 16px; cursor: pointer; font-size: 13px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.15s ease;
+}
+.topic-pill:hover { color: var(--text); border-color: var(--accent-2); }
+.topic-pill.active {
+  background: linear-gradient(135deg, rgba(110, 231, 183, 0.18), rgba(96, 165, 250, 0.18));
+  border-color: var(--accent);
+  color: var(--text);
+}
+.topic-icon { font-size: 16px; line-height: 1; }
+
 .tabs {
   display: flex; flex-wrap: wrap; gap: 6px;
   padding: 14px 28px; border-bottom: 1px solid var(--border);
   background: rgba(14, 21, 37, 0.4);
-  position: sticky; top: 81px; z-index: 9;
   backdrop-filter: blur(8px);
 }
 .tab {
@@ -340,6 +359,21 @@ h2 { margin: 0 0 8px; font-size: 28px; letter-spacing: -0.5px; }
 .resources h3 { margin: 0 0 12px; font-size: 16px; }
 .resources ul { margin: 0; padding-left: 20px; color: var(--muted); font-size: 14px; }
 .resources li { margin-bottom: 6px; }
+
+.empty, .error {
+  background: var(--panel); border: 1px solid var(--border);
+  border-radius: 12px; padding: 24px; color: var(--muted);
+  text-align: center; margin: 40px auto; max-width: 600px;
+}
+.error {
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.06);
+}
+.empty code {
+  background: var(--panel-2); padding: 2px 6px; border-radius: 4px;
+  font-size: 13px; color: var(--accent);
+}
 
 footer {
   text-align: center; color: var(--muted); font-size: 12px;
